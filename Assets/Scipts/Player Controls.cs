@@ -97,12 +97,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         },
         {
             ""name"": ""Combat"",
-            ""id"": ""f3b2bc5d-8aee-4a6e-8c94-ac17e35353fd"",
+            ""id"": ""10f38a7d-81cc-4676-bdff-62e757d8e141"",
             ""actions"": [
                 {
-                    ""name"": ""Attack1"",
+                    ""name"": ""basicAttack"",
                     ""type"": ""Button"",
-                    ""id"": ""f6e5f32b-1857-48fc-9d16-4a64923cef2b"",
+                    ""id"": ""76e4874f-46fd-4d35-8bc4-2d243ab7b7b9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -112,12 +112,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""e0df5416-1aa3-413f-be7f-ac992c557ab6"",
+                    ""id"": ""dde62445-262b-45e8-972f-5e76e23089a9"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack1"",
+                    ""action"": ""basicAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -131,7 +131,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
-        m_Combat_Attack1 = m_Combat.FindAction("Attack1", throwIfNotFound: true);
+        m_Combat_basicAttack = m_Combat.FindAction("basicAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -239,12 +239,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // Combat
     private readonly InputActionMap m_Combat;
     private List<ICombatActions> m_CombatActionsCallbackInterfaces = new List<ICombatActions>();
-    private readonly InputAction m_Combat_Attack1;
+    private readonly InputAction m_Combat_basicAttack;
     public struct CombatActions
     {
         private @PlayerControls m_Wrapper;
         public CombatActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Attack1 => m_Wrapper.m_Combat_Attack1;
+        public InputAction @basicAttack => m_Wrapper.m_Combat_basicAttack;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -254,16 +254,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_CombatActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_CombatActionsCallbackInterfaces.Add(instance);
-            @Attack1.started += instance.OnAttack1;
-            @Attack1.performed += instance.OnAttack1;
-            @Attack1.canceled += instance.OnAttack1;
+            @basicAttack.started += instance.OnBasicAttack;
+            @basicAttack.performed += instance.OnBasicAttack;
+            @basicAttack.canceled += instance.OnBasicAttack;
         }
 
         private void UnregisterCallbacks(ICombatActions instance)
         {
-            @Attack1.started -= instance.OnAttack1;
-            @Attack1.performed -= instance.OnAttack1;
-            @Attack1.canceled -= instance.OnAttack1;
+            @basicAttack.started -= instance.OnBasicAttack;
+            @basicAttack.performed -= instance.OnBasicAttack;
+            @basicAttack.canceled -= instance.OnBasicAttack;
         }
 
         public void RemoveCallbacks(ICombatActions instance)
@@ -287,6 +287,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     }
     public interface ICombatActions
     {
-        void OnAttack1(InputAction.CallbackContext context);
+        void OnBasicAttack(InputAction.CallbackContext context);
     }
 }
