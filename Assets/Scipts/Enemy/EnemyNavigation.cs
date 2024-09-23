@@ -18,7 +18,7 @@ public class EnemyNavigation : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (knockback.gettingKnockedBack) { return; }
+        if (knockback.gettingKnockedBack) { return; } // check if knocked back
         rb.MovePosition(rb.position + moveDirection * (moveSpeed * Time.fixedDeltaTime)); // move enemy
     }
 

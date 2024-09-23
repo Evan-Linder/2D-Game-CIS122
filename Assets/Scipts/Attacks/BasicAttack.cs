@@ -39,12 +39,12 @@ public class BasicAttack : MonoBehaviour
 
     private IEnumerator ResetAttackState()
     {
-        yield return new WaitForSeconds(0.5f); // Duration of the swing (adjust as needed)
-        weaponCollider.gameObject.SetActive(false); // Disable the collider
-        isAttacking = false; // Reset attacking bool
-        yield return new WaitForSeconds(0.6f); // Duration of the swing (adjust as needed)
-        myAnimator.SetBool("basicAttack", false); // Reset the animator parameter
+        yield return new WaitForSeconds(0.4f); // Duration of the swing (adjust as needed)
+        weaponCollider.gameObject.SetActive(false); // Disable the collider first so we dont have double hits
 
+        yield return new WaitForSeconds(0.7f); // Duration of the swing (adjust as needed)
+        myAnimator.SetBool("basicAttack", false); // Reset the animator parameter
+        isAttacking = false; // Reset attacking bool
     }
     private void MouseFollowWithOffset()
     {

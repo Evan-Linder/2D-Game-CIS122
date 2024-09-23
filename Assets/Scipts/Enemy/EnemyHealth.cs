@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     private int currentHealth;
     private KnockBack knockback;
     private Flash flash;
+    private Animator myAnimator;
 
 
     private void Start()
@@ -22,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
     {
         flash = GetComponent<Flash>();  
         knockback = GetComponent<KnockBack>();
+        myAnimator = GetComponent<Animator>();
     }
 
 
@@ -33,14 +35,15 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
-
     public void DetectDeath()
     {
-        if (currentHealth <= 0)
-        {
+        myAnimator.SetTrigger("Die"); // set the "Die" trigger to play the death animation.
+        Invoke("DestroyEnemy", 1f); // wait for the animation to finish before destroying.
+    }
 
-            Destroy(gameObject); // Destroy the enemy GameObject.
-        }
+    private void DestroyEnemy()
+    {
+        Destroy(gameObject); // Destroy the enemy GameObject after animation.
     }
 }
 

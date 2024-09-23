@@ -5,18 +5,18 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f; // Set move speed
-    public static PlayerController Instance;
+    public static PlayerController Instance; // create a instance of the playercontroller
 
 
-    private PlayerControls playerControls; // Input actions object
-    private Vector2 movement; // Store the player input
+    private PlayerControls playerControls; 
+    private Vector2 movement; // store the player input
 
     // references to our components
     private Rigidbody2D rb;
     private Animator myAnimator;
     private SpriteRenderer mySpriteRender;
 
-    private BasicAttack basicAttack; // reference to BasicAttack script
+    private BasicAttack basicAttack; 
 
     private void Awake()
     {
