@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2658064313482407453}
   - component: {fileID: 2792276289745056642}
+  - component: {fileID: 1119021851049434266}
+  - component: {fileID: -3892136903159930009}
+  - component: {fileID: 1801508027078576172}
   - component: {fileID: 5447076140763703667}
   - component: {fileID: 4565193973637754104}
   - component: {fileID: 7537384974603221730}
@@ -87,6 +90,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1119021851049434266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304538258544455048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26936d3dc492ad54f960b0ea155aa43f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 2
+--- !u!114 &-3892136903159930009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304538258544455048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d3fcb3977704949861c691c94c2934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+--- !u!114 &1801508027078576172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304538258544455048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d933dfedb14117498cf0d38b93e2dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &5447076140763703667
 Animator:
   serializedVersion: 5
@@ -140,9 +181,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2171357, y: -2.651474}
-  m_Size: {x: 1.6258649, y: 1.0311105}
-  m_Direction: 1
+  m_Offset: {x: -1.2171363, y: -2.1888645}
+  m_Size: {x: 0.82464355, y: 2.228479}
+  m_Direction: 0
 --- !u!50 &7537384974603221730
 Rigidbody2D:
   serializedVersion: 4
@@ -169,4 +210,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 7

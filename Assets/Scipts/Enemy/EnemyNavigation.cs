@@ -13,7 +13,7 @@ public class EnemyNavigation : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>(); 
     }
-
+    
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveDirection * (moveSpeed * Time.fixedDeltaTime)); // move enemy

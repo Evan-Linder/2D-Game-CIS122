@@ -35,6 +35,6 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 GetRoamingPosition()
     {
-        return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; // reverse x and y 
+        return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized; //generate random 2d vector.
     }
 }
