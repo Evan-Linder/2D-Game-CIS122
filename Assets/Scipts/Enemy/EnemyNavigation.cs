@@ -8,14 +8,17 @@ public class EnemyNavigation : MonoBehaviour
     [SerializeField] private float moveSpeed = 2f;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
+    private KnockBack knockback;
 
     private void Awake()
     {
+        knockback = GetComponent<KnockBack>();
         rb = GetComponent<Rigidbody2D>(); 
     }
     
     private void FixedUpdate()
     {
+        if (knockback.gettingKnockedBack) { return; }
         rb.MovePosition(rb.position + moveDirection * (moveSpeed * Time.fixedDeltaTime)); // move enemy
     }
 

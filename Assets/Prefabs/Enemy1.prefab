@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2658064313482407453}
   - component: {fileID: 2792276289745056642}
+  - component: {fileID: 5198175820297501761}
+  - component: {fileID: 2822092514223984667}
   - component: {fileID: 1119021851049434266}
   - component: {fileID: -3892136903159930009}
   - component: {fileID: 1801508027078576172}
@@ -90,6 +92,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5198175820297501761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304538258544455048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e90b108b4ca1f478582bc754906aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.09
+--- !u!114 &2822092514223984667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304538258544455048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a724c1210ce5390408dc57e6d4b7f6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redFlashMat: {fileID: 2100000, guid: 67b3d1c8b70fb44499fcd99123bae12a, type: 2}
+  restoreDefaultMatTime: 0.2
 --- !u!114 &1119021851049434266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26936d3dc492ad54f960b0ea155aa43f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 2
+  startingHealth: 6
 --- !u!114 &-3892136903159930009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d3fcb3977704949861c691c94c2934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 1
 --- !u!114 &1801508027078576172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,4 +239,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 7
+  m_Constraints: 4

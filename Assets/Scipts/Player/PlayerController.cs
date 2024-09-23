@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f; // Set move speed
+    public static PlayerController Instance;
+
 
     private PlayerControls playerControls; // Input actions object
     private Vector2 movement; // Store the player input
@@ -18,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+
+        Instance = this;
         playerControls = new PlayerControls(); // player controls object
 
         // Attach all the components to our variables

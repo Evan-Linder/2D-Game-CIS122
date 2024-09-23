@@ -5,8 +5,7 @@ public class BasicAttack : MonoBehaviour
 {
     
     [SerializeField] private Transform weaponCollider; // Reference to the collider
-
-    private bool isAttacking = false;
+    public bool isAttacking { get; private set; }
     private PlayerControls playerControls;
     private Animator myAnimator;
     private PlayerController playerController;
@@ -40,10 +39,10 @@ public class BasicAttack : MonoBehaviour
 
     private IEnumerator ResetAttackState()
     {
-
-        yield return new WaitForSeconds(1.3f); // Duration of the swing (adjust as needed)
+        yield return new WaitForSeconds(0.5f); // Duration of the swing (adjust as needed)
         weaponCollider.gameObject.SetActive(false); // Disable the collider
         isAttacking = false; // Reset attacking bool
+        yield return new WaitForSeconds(0.6f); // Duration of the swing (adjust as needed)
         myAnimator.SetBool("basicAttack", false); // Reset the animator parameter
 
     }
