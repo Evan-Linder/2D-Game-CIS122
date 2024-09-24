@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerControls.Combat.Dash.performed += _ => Dash();
+        originalMoveSpeed = moveSpeed;
     }
 
     private void OnEnable()
@@ -93,7 +94,6 @@ public class PlayerController : MonoBehaviour
         if (!isDashing)
         {
             isDashing = true;
-            originalMoveSpeed = moveSpeed; // Store the original speed
             moveSpeed += dashSpeed;
 
             myAnimator.SetBool("isDashing", true); // Set the isDashing boolean to true
